@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Cloud Tasks - Projeto AWS</h1></header>
+  <main>
+    <section class="card">
+      <h2>Nova Tarefa</h2>
+      <div id="task-form">
+        <input type="text" id="title" placeholder="Titulo" required>
+        <input type="text" id="description" placeholder="Descricao">
+        <select id="priority">
+          <option value="baixa">Baixa</option>
+          <option value="media" selected>Media</option>
+          <option value="alta">Alta</option>
+        </select>
+        <select id="status">
+          <option value="pendente" selected>Pendente</option>
+          <option value="concluida">Concluida</option>
+        </select>
+        <button onclick="createTask()">Salvar</button>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Tarefas</h2>
+      <table id="tasks-table">
+        <thead><tr><th>ID</th><th>Titulo</th><th>Status</th><th>Prioridade</th><th>Acoes</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section class="card">
+      <h2>Relatorio (Lambda)</h2>
+      <button onclick="loadReport()">Gerar Relatorio</button>
+      <pre id="report-output"></pre>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
